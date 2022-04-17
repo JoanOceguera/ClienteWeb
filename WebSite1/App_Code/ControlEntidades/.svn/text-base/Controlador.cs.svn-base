@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.ComponentModel;
+using System.Data;
+
+namespace ReporteDBModel
+{    
+   public class Controlador
+    {
+        static public ReporteDBEntities context = null;
+        
+        public Controlador()
+        {
+            if(context == null)
+                context = new ReporteDBEntities();
+        }
+         public ReporteDBEntities GetCNX()
+        {
+            if (context == null)
+                context = new ReporteDBEntities();
+            return context;
+        }
+        public ReporteDBEntities cnx
+        {
+            get { return GetCNX(); }
+            set { context = value; }
+        }
+    }
+}

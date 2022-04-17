@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://center/RecursosHumanos/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://center/RecursosHumanos/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://center/RecursosHumanos/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ServicioWebCC" />
+      <xsd:import schemaLocation="http://center/RecursosHumanos/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+      <xsd:import schemaLocation="http://center/RecursosHumanos/Service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Trabajadores_InputMessage">
+    <wsdl:part name="parameters" element="tns:Trabajadores" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Trabajadores_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TrabajadoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BuscarTrabajadorxNombre_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTrabajadorxNombre" />
+  </wsdl:message>
+  <wsdl:message name="IService1_BuscarTrabajadorxNombre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarTrabajadorxNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListadoAgrupaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoAgrupaciones" />
+  </wsdl:message>
+  <wsdl:message name="IService1_ListadoAgrupaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListadoAgrupacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DameAgrupacionxId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DameAgrupacionxId" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DameAgrupacionxId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DameAgrupacionxIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DameAgrupacionxNombre_InputMessage">
+    <wsdl:part name="parameters" element="tns:DameAgrupacionxNombre" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DameAgrupacionxNombre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DameAgrupacionxNombreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DamePersonaxExp_InputMessage">
+    <wsdl:part name="parameters" element="tns:DamePersonaxExp" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DamePersonaxExp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DamePersonaxExpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DamePersonaxCi_InputMessage">
+    <wsdl:part name="parameters" element="tns:DamePersonaxCi" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DamePersonaxCi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DamePersonaxCiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DameNombreDepartamentoPersonaxExp_InputMessage">
+    <wsdl:part name="parameters" element="tns:DameNombreDepartamentoPersonaxExp" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DameNombreDepartamentoPersonaxExp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DameNombreDepartamentoPersonaxExpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DimeUltimoRegistro_InputMessage">
+    <wsdl:part name="parameters" element="tns:DimeUltimoRegistro" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DimeUltimoRegistro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DimeUltimoRegistroResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Trabajadores">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Trabajadores" message="tns:IService1_Trabajadores_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/TrabajadoresResponse" message="tns:IService1_Trabajadores_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTrabajadorxNombre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/BuscarTrabajadorxNombre" message="tns:IService1_BuscarTrabajadorxNombre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/BuscarTrabajadorxNombreResponse" message="tns:IService1_BuscarTrabajadorxNombre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListadoAgrupaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/ListadoAgrupaciones" message="tns:IService1_ListadoAgrupaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/ListadoAgrupacionesResponse" message="tns:IService1_ListadoAgrupaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DameAgrupacionxId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DameAgrupacionxId" message="tns:IService1_DameAgrupacionxId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DameAgrupacionxIdResponse" message="tns:IService1_DameAgrupacionxId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DameAgrupacionxNombre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DameAgrupacionxNombre" message="tns:IService1_DameAgrupacionxNombre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DameAgrupacionxNombreResponse" message="tns:IService1_DameAgrupacionxNombre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DamePersonaxExp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DamePersonaxExp" message="tns:IService1_DamePersonaxExp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DamePersonaxExpResponse" message="tns:IService1_DamePersonaxExp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DamePersonaxCi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DamePersonaxCi" message="tns:IService1_DamePersonaxCi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DamePersonaxCiResponse" message="tns:IService1_DamePersonaxCi_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DameNombreDepartamentoPersonaxExp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DameNombreDepartamentoPersonaxExp" message="tns:IService1_DameNombreDepartamentoPersonaxExp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DameNombreDepartamentoPersonaxExpResponse" message="tns:IService1_DameNombreDepartamentoPersonaxExp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DimeUltimoRegistro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DimeUltimoRegistro" message="tns:IService1_DimeUltimoRegistro_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DimeUltimoRegistroResponse" message="tns:IService1_DimeUltimoRegistro_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Trabajadores">
+      <soap:operation soapAction="http://tempuri.org/IService1/Trabajadores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarTrabajadorxNombre">
+      <soap:operation soapAction="http://tempuri.org/IService1/BuscarTrabajadorxNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListadoAgrupaciones">
+      <soap:operation soapAction="http://tempuri.org/IService1/ListadoAgrupaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DameAgrupacionxId">
+      <soap:operation soapAction="http://tempuri.org/IService1/DameAgrupacionxId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DameAgrupacionxNombre">
+      <soap:operation soapAction="http://tempuri.org/IService1/DameAgrupacionxNombre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DamePersonaxExp">
+      <soap:operation soapAction="http://tempuri.org/IService1/DamePersonaxExp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DamePersonaxCi">
+      <soap:operation soapAction="http://tempuri.org/IService1/DamePersonaxCi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DameNombreDepartamentoPersonaxExp">
+      <soap:operation soapAction="http://tempuri.org/IService1/DameNombreDepartamentoPersonaxExp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DimeUltimoRegistro">
+      <soap:operation soapAction="http://tempuri.org/IService1/DimeUltimoRegistro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://center/RecursosHumanos/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

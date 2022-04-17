@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ServicioWebCC" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServicioWebCC" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://center/RecursosHumanos/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" />
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:complexType name="ArrayOfPersonal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Personal" nillable="true" type="tns:Personal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonal" nillable="true" type="tns:ArrayOfPersonal" />
+  <xs:complexType name="Personal">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q1:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Apellido1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Apellido2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CarneId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Exp" type="xs:int" />
+          <xs:element minOccurs="0" name="Foto" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Fotolector" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PersonalImagen" nillable="true" type="tns:ArrayOfPersonalImagen" />
+          <xs:element minOccurs="0" name="Raza" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Personal" nillable="true" type="tns:Personal" />
+  <xs:complexType name="ArrayOfPersonalImagen">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonalImagen" nillable="true" type="tns:PersonalImagen" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonalImagen" nillable="true" type="tns:ArrayOfPersonalImagen" />
+  <xs:complexType name="PersonalImagen">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q2:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DirImagen" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ID" type="xs:int" />
+          <xs:element minOccurs="0" name="Imagen" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="NombreDedo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Personal" nillable="true" type="tns:Personal" />
+          <xs:element minOccurs="0" name="PersonalReference" nillable="true" type="q2:EntityReferenceOfPersonalrhOH9sj2" />
+          <xs:element minOccurs="0" name="Solapin" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonalImagen" nillable="true" type="tns:PersonalImagen" />
+  <xs:complexType name="ArrayOfAgrupacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Agrupacion" nillable="true" type="tns:Agrupacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAgrupacion" nillable="true" type="tns:ArrayOfAgrupacion" />
+  <xs:complexType name="Agrupacion">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Agrupaciones">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Agrupacion" nillable="true" type="tns:Agrupacion" />
+  <xs:complexType name="Agrupaciones">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q3:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Alias" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="BaseDatos" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id_Agrup" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Id_Scta" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nom_Agrup" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Produce" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Agrupaciones" nillable="true" type="tns:Agrupaciones" />
+  <xs:complexType name="PersonalRH">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses" base="q4:EntityObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Alta" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Antiguedad" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Apellido1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Apellido2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Cargo" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="CarneId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CategBTecno" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="CategCient" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="CategDoc" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="CategOcup" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="CategTecno" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Clasificacion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContabilidadC" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Contrata" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Curriculum" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Direccion" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Dirigente" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Especialidad" nillable="true" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="EstudiosTerminados" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="Exp" type="xs:int" />
+          <xs:element minOccurs="0" name="Foto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fotolector" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GCientifico" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="GElectrogeno" nillable="true" type="xs:decimal" />
+          <xs:element minOccurs="0" name="GradoCient" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="IdPlaza" type="xs:short" />
+          <xs:element minOccurs="0" name="Militancia" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Mpio" type="xs:short" />
+          <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Pais" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Profesion" nillable="true" type="xs:short" />
+          <xs:element minOccurs="0" name="Provincia" type="xs:short" />
+          <xs:element minOccurs="0" name="Raza" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sucursal" type="xs:unsignedByte" />
+          <xs:element minOccurs="0" name="Telefono" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PersonalRH" nillable="true" type="tns:PersonalRH" />
+</xs:schema>
